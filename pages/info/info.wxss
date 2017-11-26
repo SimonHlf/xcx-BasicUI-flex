@@ -1,0 +1,10 @@
+.content{
+  padding:0 10px;
+}
+.content-text{
+  line-height: 2em;
+  font-size: 15px;
+}
+.content-img{
+  width: 100%;
+}

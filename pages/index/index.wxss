@@ -1,0 +1,51 @@
+.newsList1{
+  padding:8px;
+  border-bottom:1px solid #edeff3;
+  display: flex;
+  justify-content: space-between;
+  margin:5px 0px;
+}
+.newsList1-img{
+  width:28%;
+  font-size:0px;/*去除图片下的留白*/
+}
+.newsList1-img image{
+  width:100%;
+}
+.newsList-content{
+  width:70%;
+}
+.newsList-title{
+  font-size: 15px;
+  line-height: 1.6em；
+}
+.newsList-author{
+  font-size:13px;
+  color:#ccc;
+  line-height: 1.6em;
+  margin-top:10px;
+}
+.newsList2{
+  padding:8px;
+  border-bottom:1px solid #edeff3;
+  margin:5px 0px;
+}
+.newsList2-img{
+  padding:5px 0px;
+  display: flex;
+}
+.newsList2-img image{
+  margin:0 5px;
+}
+.newsList3{
+  padding:8px;
+  border-bottom:1px solid #edeff3;
+  margin:5px 0px;
+}
+.newsList3-img{
+  width: 100%;
+}
+.newsList3-img image{
+  width: 100%;
+
+}

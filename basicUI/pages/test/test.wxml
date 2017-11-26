@@ -1,0 +1,4 @@
+<view>
+test...啦啦啦啦啦
+{{title}}={{age}}
+</view>

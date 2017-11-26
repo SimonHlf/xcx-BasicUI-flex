@@ -1,0 +1,9 @@
+<view class="content" wx:for="{{content}}">
+  <!-- text 用于输出文本  -->
+  <text class="content-text" wx:if="{{item.cate == 'text'}}">
+    {{item.content}}
+  </text>
+  <image class="content-img" wx:elif="{{item.cate == 'img'}}" mode='widthFix'>
+    {{item.src}}
+  </image>
+</view>

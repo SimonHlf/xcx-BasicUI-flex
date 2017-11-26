@@ -1,0 +1,31 @@
+.dujia-list{
+  background: #fff;
+  margin:8px;
+}
+.dujia-list-cate{
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dujia-list-cate-line{
+  width:50px;
+  height: 3px;
+  background: #df3031;
+}
+.dujia-list-cate-text{
+  height: 46px;
+  line-height: 46px;
+  padding:0 10px;
+  font-size: 16px;
+}
+.dujia-list-img{
+  width: 100%;
+}
+.dujia-list-img image{
+  width: 100%;
+}
+.dujia-list-title{
+  font-size: 14px;
+  line-height: 1.8em;
+}

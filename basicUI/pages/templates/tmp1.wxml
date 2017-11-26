@@ -1,0 +1,6 @@
+<template name="odds">
+  <view>add</view>
+</template>
+<template name="evens">
+  <view>even</view>
+</template>

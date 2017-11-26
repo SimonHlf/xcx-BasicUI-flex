@@ -1,0 +1,289 @@
+<!-- 音频组件  -->
+<audio poster="{{poster}}" name="{{names}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+<button type="primary" bindtap="audioPlay">播放</button>
+<button type="primary" bindtap="audioPause">暂停</button>
+<button type="primary" bindtap="audio29">设置当前播放时间为29秒</button>
+<button type="primary" bindtap="audioStart">回到开头</button>
+
+
+<view>------邪恶分界线------</view>
+<!-- 页面链接 navigator  -->
+<navigator url='../test/test'>跳转到test页面</navigator>
+<navigator url='../test/test?title=hcolder&age=18'>跳转到test页面带传值的...</navigator>
+<navigator open-type='switchTab' url='../logs/logs'>跳到到log页面</navigator>
+<view>------邪恶分界线------</view>
+<!-- radio组件 radio-group 单项选择器，内部由多个<radio/>组成。   -->
+<view>
+  <radio-group bindchange="myRadioChange">
+    <radio value='1' checked>男</radio>
+    <radio value='2'>女</radio>
+  </radio-group>
+</view>
+<view>------邪恶分界线------</view>
+<!-- 滑动选择器  -->
+ <view>
+  <slider bindchange="slider1change" left-icon="cancel" right-icon="success_no_circle" show-value bindchange='mySliderChange'/>
+ </view>
+ <view>------邪恶分界线------</view>
+<!-- switch开关  -->
+<view>
+  <switch type='switch' bindchange='mySwitchChange'></switch>
+  <switch checked type='switch'></switch>
+</view> 
+<view>------邪恶分界线------</view>
+<!-- textarea文本框  -->
+<view>
+  <textarea style='background:#ccc;' placeholder='请输入一段文字' placeholder-style='color:red;font-size:30rpx;' maxlength='6' bindinput='myTextArea'></textarea>
+</view>
+<view>------邪恶分界线------</view>
+<!--表单及表单提交  -->
+<!--
+  表单，将组件内的用户输入的<switch/> <input/> <checkbox/> <slider/> <radio/> <picker/> 提交。
+当点击 <form/> 表单中 formType 为 submit 的 <button/> 组件时，会将表单组件中的 value 值进行提交，需要在表单组件中加上 name 来作为 key。
+bindsubmit	EventHandle	携带 form 中的数据触发 submit 事件，event.detail = {value : {'name': 'value'} , formId: ''}
+bindreset	EventHandle	表单重置时会触发 reset 事件
+  -->
+<form bindsubmit='myFormSubmit'>
+  <view>
+    <radio-group name="radioGroup">
+      <radio value="1" checked>男</radio>
+      <radio value='2'>女</radio>
+    </radio-group>
+  </view>
+  <view>
+    <slider show-value name="sliderOn"></slider>
+  </view>
+  <view>
+    <switch checked type='switch' name="isOn"></switch>
+  </view>
+  <view>
+    <textarea style='background:#ccc;' placeholder='请输入一段文字' placeholder-style='color:red;font-size:30rpx;' maxlength='-1' bindinput='myTextArea' name="textArea"></textarea>
+  </view>
+  <view>
+    <button form-type='submit'>submit</button>
+  </view>
+</form>
+<view>------邪恶分界线------</view>
+<!-- 选择器picker  -->
+<!--
+  从底部弹起的滚动选择器，现支持三种选择器，通过mode来区分，分别是普通选择器，时间选择器，日期选择器，默认是普通选择器
+  -->
+<!-- picker普通选择器 mode=selector  -->
+<view>请选择国家</view>
+<picker bindchange='myPicker_sel' value='{{selIndex}}' range='{{pickerArray_sel}}'>
+  <view>{{pickerArray_sel[selIndex]}}</view>
+</picker>
+
+<!-- picker时间选择器 mode=time  -->
+<view>请选择时间</view>
+<picker mode="time" bindchange='myPickerTime'>
+  <view>{{time}}</view>
+</picker>
+<!-- picker日期选择器 mode=date  -->
+<view>请选择日期</view>
+<picker mode="date" bindchange='myPickerDate'>
+  <view>{{date}}</view>
+</picker>
+<view>请选择省</view>
+<picker value="{{indexSheng}}" range='{{arraySheng}}' bindchange='selProv'>
+  <view>{{arraySheng[indexSheng]}}</view>
+</picker>
+<view>请选择市</view>
+<picker value='{{indexShi}}' range='{{arrayShi[indexSheng]}}' bindchange='selCity'>
+  <view>{{arrayShi[indexSheng][indexShi]}}</view>
+</picker>
+<view>------邪恶分界线------</view>
+<!--  button按钮组件和checkbox  -->
+<button type='default' size='mini'>default</button>
+<button type='primary'>primary</button>
+<button type='warn'>warn</button>
+<button type='primary' plain='{{true}}' size='mini'>按钮是否镂空背景色透明</button>
+<button type='warn' loading='{{true}}' size='mini'>loading</button>
+<button type='default' size='mini' disabled='{{true}}'>disable</button>
+<button type='default' size='mini' hover-class='btnTest'>default</button>
+<!-- 注：注：button-hover 默认为{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}  -->
+<view>------邪恶分界线------</view>
+<!-- checkbox  -->
+<!--
+  checkbox-group 多项选择器，内部由多个checkbox组成。
+  -->
+<view>
+  <!-- <checkbox-group>
+    <label class='checkbox' wx:for="{{checkboxItems}}">
+      <checkbox value='{{checkboxItems.name}}'></checkbox>
+    </label>
+  </checkbox-group> -->
+  <checkbox-group bindchange="checkSexChange">
+    <checkbox value='1' checked>男</checkbox>
+    <checkbox value='2'>女</checkbox>
+  </checkbox-group>
+</view>
+<view>------邪恶分界线------</view>
+<view>
+  <checkbox-group bindchange="checkboxChange">
+    <label class='checkbox' wx:for="{{checkBoxItems}}">
+      <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+  </checkbox-group>
+</view>
+<view>------邪恶分界线------</view>
+<!--input组件  -->
+<input type='text' placeholder='这是一个纯洁的文本框' placeholder-style='font-size:30rpx;color:blue;'/>
+<input type='text' password='{{true}}' placeholder='我是带有密码的纯洁文本框' placeholder-style='font-size:30rpx;color:blue;'></input>
+<input type='number' placeholder='我是number类型的文本框'></input>
+<input type='icard'></input>
+<view class='cpadding'>姓名</view>
+<view class="cpadding cBorder">
+  <input type='text' placeholder='text...' bindinput='myInputFunc' bindfocus='myInputFuncFocus' bindblur='myInputFuncBlur' bindconfirm='myInputFuncConfirm'></input>
+</view>
+<view class='cpadding'>密码</view>
+<view class="cpadding cBorder"><input type='text' password></input></view>
+<view>------邪恶分界线------</view>
+<!-- label  -->
+<!--
+  用来改进表单组件的可用性，使用for属性找到对应的id，或者将控件放在该标签下，当点击时，就会触发对应的控件。
+for优先级高于内部控件，内部有多个控件的时候默认触发第一个控件。
+目前可以绑定的控件有：<button/>, <checkbox/>, <radio/>, <switch/>。
+  -->
+<view>
+  <label class='label'>
+    <checkbox value='1'>北京</checkbox>
+  </label>
+  <label class='label'>
+    <checkbox value='2'>上海</checkbox>
+  </label>
+</view>
+<view>------邪恶分界线------</view>
+<!-- 视图组件view  -->
+<view class="hoverClass" hover="{{true}}" hover-class='hoverClass1'>点击我测试view属性</view>
+<view>------邪恶分界线------</view>
+<!-- 视图组件scroll-view 可视滚动区域 横向  -->
+<scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+    <view id="green" class="scroll-view-item_H bc_green">1</view>
+    <view id="red"  class="scroll-view-item_H bc_red">2</view>
+    <view id="yellow" class="scroll-view-item_H bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">4</view>
+</scroll-view>
+
+<view>------邪恶分界线------</view>
+<!-- 视图组件scroll-view 可视滚动区域 纵向  -->
+<scroll-view class="scroll-view_H1" scroll-y="true" style="height: 200rpx">
+    <view id="green" class="scroll-view-item_H1 bc_green">1</view>
+    <view id="red"  class="scroll-view-item_H1 bc_red">2</view>
+    <view id="yellow" class="scroll-view-item_H1 bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item_H1 bc_blue">4</view>
+</scroll-view>
+<view>------邪恶分界线------</view>
+<!-- 视图组件swiper滑块容器  -->
+<swiper style='padding:0 10px' indicator-dots="{{true}}"  autoplay="{{true}}" interval='{{5000}}'>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view>------邪恶分界线------</view>
+<!-- icon图标 text文本 progress进度条  -->
+<icon type='success' size='40'></icon>
+<icon type='waiting' size='20'></icon>
+<icon type='waiting_circle' size='20'></icon>
+<icon type='info' size='20'></icon>
+<icon type='search' size='30'></icon>
+<icon type='success_circle' size='30'></icon>
+<icon type='success_no_circle' size='20'></icon>
+<view>------邪恶分界线------</view>
+<text>我是一段纯洁的text文本内容啦啦啦啦啦啦</text>
+<text>我是一段带有换行符\n的纯洁文本内容啦啦啦啦啦啦</text>
+<view>------邪恶分界线------</view>
+<progress percent='20' show-info='{{true}}'></progress>
+<progress percent='89' color='red' active='{{true}}'></progress>
+<progress percent='28' stroke-width='8'></progress>
+<view>------邪恶分界线------</view>
+<!-- 小程序事件 视图层到逻辑层的通讯方式  -->
+<view bindtap='myTap' data-name="hcoders" data-my-age="28">点击这里执行myTabp</view>
+<!-- 使用dataset进行数据传递 传递视图上对应的数据 书写方式：
+      data-element-type  data-name="hcoder" 如果data后跟的变量名字比较长需要用-来分割的话例如data-my-name="hcoder",那么在方法中获取时需要将其变成驼峰法来写e.target.dataset.myName
+  -->
+<view>------邪恶分界线------</view>
+
+<!-- 小程序模版 采用template标签 给其定义一个name模版名称  -->
+<!-- 使用is属性声明需要使用的模版，然后将模版所需要的data传入 注意用data中定义的变量名前面要加上...来做变量的一个引用  -->
+<template name="myDiyTemplate">
+  <view>
+    <text>{{index}}:{{msg}}</text>
+    <text>Time:{{time}}</text>
+  </view>
+</template>
+<!-- 使用模版  -->
+<template is="myDiyTemplate" data="{{...diyTempObj}}" />
+
+<template name="odd">
+  <view>add</view>
+</template>
+<template name="even">
+  <view>even</view>
+</template>
+<block wx:for="{{[1,2,3,4,5]}}">
+  <template is="{{item%2===0 ? 'even' : 'odd'}}"></template>
+</block>
+<view>------邪恶分界线------</view>
+<!-- 模版引用方式  01：import 模版文件和视图文件不在同一个文件中 需要先用import将其倒入进来然后再用is来使用 import专门针对于模版的一个引入 -->
+<import src="../templates/tmp1.wxml"/>
+<block wx:for="{{[1,2,3,4,5]}}">
+  <template is="{{item%2===0 ? 'evens' : 'odds'}}"></template>
+</block>
+<!-- 模仿引入方式 02:include 针对一个文件的引入  -->
+<include src="../include/header.wxml"/>
+<!-- 注：
+  采用这两种引入的情况：
+    1：项目中存在大量的类似视图组件
+    2：项目头尾高度重复
+    3：其他重复类组件
+  -->
+<view>------邪恶分界线------</view>
+<!-- wxss  -->
+<view>尺寸单位：rpx:</view>
+<view>iphone5:1rpx=0.42px 1px=2.34rpx</view>
+<view>iphone5:1rpx=0.5px 1px=2rpx</view>
+<view>rpx->px=屏幕宽/750</view>
+<view>px->rpx=750/屏幕宽</view>
+<view>采用@import来导入 相对路径</view>
+<view style="">内联样式</view>
+<view class="testWxss">hi</view>
+<view class='wailian'>外联样式文件@import</view>
+<view>------邪恶分界线------</view>
+<view>{{name}}</view>
+<view>app版本{{version}}</view>
+<view>app名称{{appName}}</view>
+<view id="v_{{id}}"></view>
+<!-- 数据绑定  -->
+<!-- 控制属性  -->
+<view wx:if="{{true}}">{{name}}1</view>
+<view wx:if="{{show}}">控制属性if的定义</view>
+<!-- checkbox特别声明：不要直接写checked="false",其计算结果是一个字符串,转成boolean类型后会按照真来处理  -->
+<checkbox value='1' checked="{{true}}">小明</checkbox>
+<radio value='2' checked="{{radio}}">小林</radio>
+<!-- 三目运算  -->
+<view hidden="{{flag ? true : false}}">三目运算</view>
+<!-- 数学计算  -->
+<view>{{a+b}}+{{c}}+d</view>
+<!-- 字符串运算  -->
+<view>{{"小明"+name}}</view>
+<!-- 数据路径计算  -->
+<view>姓名：{{person.name}}</view>
+<view>年龄：{{person.age}}</view>
+<view>姓名：{{arrayObj[0]}}</view>
+<view>年龄：{{arrayObj[1]}}</view>
+<!-- 条件渲染  -->
+<view class='test bgRed' wx:if="{{color>1}}"></view>
+<view class='test bgGreen' wx:elif="{{color>2}}"></view>
+<view class='test bgPink' wx:else="{{color>3}}"></view>
+<view>--------我是邪恶的分界线------</view>
+<!-- 列表渲染for循环  -->
+<view class='test bgPink' wx:for="{{array}}">{{index+"::"}}{{item}}</view>
+<view>--------我是邪恶的分界线------</view>
+<view>注：可以通过wx:for-item="diyName"来修改for循环的系统变量item名</view>
+<view>注：可以通过wx:for-index="diyIndex"来修改for循环的下标index名</view>
+<view class='test bgPink' wx:for="{{arrayObject}}">
+  {{item.name+"的年龄是"}}{{item.age+"喜欢的运动是"}}{{item.like}}
+</view>

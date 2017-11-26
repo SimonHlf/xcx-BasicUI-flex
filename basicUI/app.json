@@ -1,0 +1,29 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/test/test"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color":"red",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "index",
+      "iconPath": "images/yaowen.png",
+      "selectedIconPath": "images/yaowen1.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "news",
+        "iconPath": "images/dujia.png",
+        "selectedIconPath": "images/dujia1.png"
+      }
+    ]
+  }
+}

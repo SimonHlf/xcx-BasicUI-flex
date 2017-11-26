@@ -1,0 +1,36 @@
+<!-- 去循环一个指定变量 -->
+<view wx:for="{{newsList}}">
+<!--  for的过程中会产生一个变量，这个变量叫做item  -->
+  <!-- {{item.title}} -->
+  <view class="newsList1" wx:if="{{item.type==1}}">
+    <view class="newsList1-img">
+      <image src="{{item.img}}" mode='widthFix'></image>
+    </view>
+    <view class="newsList-content">
+        <view class="newsList-title">
+          <navigator url="../info/info">
+            {{item.title}}
+          </navigator>
+          </view>
+        <view class="newsList-author">{{item.author}}</view>
+    </view>
+  </view>
+  <!-- 第二种布局方式  -->
+  <view class="newsList2" wx:elif="{{item.type==2}}">
+    <view class="newsList-title">
+      {{item.title}}
+    </view>
+    <view class="newsList2-img">
+      <image src="{{item}}" wx:for="{{item.img}}" mode='widthFix'></image>
+    </view>
+    <view class="newsList-author">{{item.author}}</view>
+  </view>
+  <!-- 第三种模式 -->
+  <view class="newsList3" wx:else="{{item.type==3}}">
+    <view class="newsList-title">{{item.title}}</view>
+    <view class="newsList3-img">
+      <image src="{{item.img}}"></image>
+    </view>
+    <view class="newsList-author">{{item.author}}</view>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        /*左上角一个中心点一个右下角一个*/
+        .box{
+            display: flex;
+            width: 400px;
+            height: 400px;
+            border:1px solid #000;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .item{
+            width: 200px;
+            height: 100px;
+            display: block;
+            background:red;
+        }
+        .item:nth-child(2){
+            align-self: center;
+        }
+        .item:nth-child(3){
+            align-self: flex-end;
+        }
+        /* 中间纵向三个 */
+        .box{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+      <span class="item">1</span>
+      <span class="item">2</span>
+      <span class="item">3</span>
+    </div>
+</body>
+</html>

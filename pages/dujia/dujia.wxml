@@ -1,0 +1,12 @@
+<!-- 循环newsList数据源  -->
+<view class="dujia-list" wx:for="{{newsList}}">
+  <view class="dujia-list-cate">
+    <view class="dujia-list-cate-line"></view>
+    <view class="dujia-list-cate-text">{{item.cate}}</view>
+    <view class="dujia-list-cate-line"></view>
+  </view>
+  <view class="dujia-list-img">
+    <image src="{{item.img}}" mode="widthFix"></image>
+  </view>
+  <view class="dujia-list-title">{{item.title}}</view>
+</view>

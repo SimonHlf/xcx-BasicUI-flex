@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/dujia/dujia",
+    "pages/info/info"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#DF3031",
+    "navigationBarTitleText": "网易新闻优选",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#000000",
+    "selectedColor":"#DF3031",
+    "list": [
+        {
+        "pagePath": "pages/index/index",
+        "text": "要闻",
+        "iconPath": "images/yaowen.png",
+        "selectedIconPath": "images/yaowen1.png"
+        },
+        {
+          "pagePath": "pages/dujia/dujia",
+          "text": "独家",
+          "iconPath": "images/dujia.png",
+          "selectedIconPath": "images/dujia1.png"
+        }
+    ]
+  }
+}
